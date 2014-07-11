@@ -170,5 +170,10 @@ You need to add GameController.Framework (iOS 7.0 above). See the picture below.
 
 ###3. Write your controller event 
 
-[Game controller event][1]
+[a](#user-content-how-to-support-game-controller-in-cocos2d-x)
+
+## How to integrate game controller to Android devices
+
+###1. Connect device
+
 

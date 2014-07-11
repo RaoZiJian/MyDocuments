@@ -5,7 +5,7 @@
 
 Example:
 
-```
+```cpp
 	
 	// test case: cpp-tests->Sprite3DTest->Testing Sprite3D
 	// source: cocos2d-x/tests/cpp-tests/Classes/Sprite3DTest/Sprite3DTest.cpp

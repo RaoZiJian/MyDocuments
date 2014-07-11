@@ -5,7 +5,7 @@
 
 Example:
 
-```c++
+```cpp
 
 	// test case: cpp-tests->Sprite3DTest->Testing Sprite3D
 	// source: cocos2d-x/tests/cpp-tests/Classes/Sprite3DTest/Sprite3DTest.cpp
@@ -16,7 +16,7 @@ Example:
     sprite->setScale(3.f);
     sprite->setTexture("Sprite3DTest/boss.png");
     
-```c++
+```cpp
 
 As a subclass of `Node`, sprite3Ds can be transformed manually or using [Actions](http://www.cocos2d-x.org/wiki/Actions), which is as same as the `Sprite`.
 
@@ -62,7 +62,7 @@ Options:
 To run an animation of `Sprite3D`, we have `Animation3D\Animate3D` classes. `Animation3D` can be created from the 'c3b' or 'c3t' format files. And then create the `Animate3D` through the Animation3D object. You can use `runAction()` to run the `Animate3D` since it is a subclass of the `ActionInterval`. This is alike the relation between `Animation\Animate`. We have a sample in the `testcpp` titled `Testing Animate3D`.
 
 
-```c++
+```cpp
 	
 	// test case: cpp-tests->Sprite3DTest
 	// source: cocos2d-x/tests/cpp-tests/Classes/Sprite3DTest/Sprite3DTest.cpp
@@ -98,7 +98,7 @@ To run an animation of `Sprite3D`, we have `Animation3D\Animate3D` classes. `Ani
         sprite->runAction(RepeatForever::create(animate));        
 	}
 	
-```c++
+```cpp
 
 
 
@@ -106,7 +106,7 @@ To run an animation of `Sprite3D`, we have `Animation3D\Animate3D` classes. `Ani
 
 Talking bout the effects of 'Sprite3D', we don't support any API of it in v3.2 because it would change many core code of the engine which may lead to so much unstable. But there is a sample implements the `3D outline effect` in [EarthWarrior3D](https://github.com/chukong/EarthWarrior3D) by `Sprite3D` to navigate how to create your own effects. Developers can find the code from `testCpp`.
 
-```c++
+```cpp
 
 	// test case: cpp-tests->Sprite3DTest->Sprite3D with effects
 	// source: cocos2d-x/tests/cpp-tests/Classes/Sprite3DTest/Sprite3DTest.cpp
@@ -128,7 +128,7 @@ Talking bout the effects of 'Sprite3D', we don't support any API of it in v3.2 b
     sprite->addEffect(effect2, -2);
     //sprite->setEffect3D(effect);
     sprite->setScale(6.f);
-```c++
+```cpp
 
 ![image](./Resources/Sprite3DEffect.png)
 

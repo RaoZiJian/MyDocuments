@@ -165,7 +165,7 @@ To support game controller in iOS devices, you need `iOS 7.0` above. And you nee
 
 ###2. Add GameController.Framework 
 
-If you are a new comer and you don't know how to create a Cocos2d-x project on iOS, read this article first. [How_to_Start_A_New_Cocos2D-X_Game](http://www.cocos2d-x.org/wiki/How_to_Start_A_New_Cocos2D-X_Game). Next you need to add GameController.Framework (iOS 7.0 above). See the picture below.
+If you are a new comer and you don't know how to create a Cocos2d-x project on iOS, read this article first:[How_to_Start_A_New_Cocos2D-X_Game](http://www.cocos2d-x.org/wiki/How_to_Start_A_New_Cocos2D-X_Game). Next you need to add GameController.Framework (iOS 7.0 above). See the picture below.
 
 ![iOS project](http://discuss.cocos2d-x.org/uploads/default/6649/1edfdce7d63272f4.jpeg)
 
@@ -184,11 +184,13 @@ To connect the game controller, read the instructions of your game controller pl
 
 ###2. Add libControllerManualAdapter
 
-If you are a new comer and you don't know how to create a Cocos2d-x project on iOS, read this article first. [How_to_Build_an_Android_Project_with_Eclipse](http://www.cocos2d-x.org/wiki/How_to_Build_an_Android_Project_with_Eclipse). But the game controller feature is an independent lib named `libControllerManualAdapter` which means you need to add this lib to your eclipse android project. The path is `Cocos2d-x path/platform/android/ControllerManualAdapter `and it can be compiled only on `Android sdk 4.1.2 above` . 
+If you are a new comer and you don't know how to create a Cocos2d-x project on iOS, read this article first:[How_to_Build_an_Android_Project_with_Eclipse](http://www.cocos2d-x.org/wiki/How_to_Build_an_Android_Project_with_Eclipse). But the game controller feature is an independent lib named `libControllerManualAdapter` which means you need to add this lib to your eclipse android project. The path is `Cocos2d-x path/platform/android/ControllerManualAdapter `and it can be compiled only on `Android sdk 4.1.2 above` . 
 
 ![eclipse project](./Resources/Eclipse project.png)
 
 ###3. Modify AppActivity.java
+
+Modify the `AppActivity.java` like the sample below.
 
 ```java
 
@@ -196,12 +198,20 @@ import org.cocos2dx.lib.GameControllerActivity;
 import android.os.Bundle;
 
 public class AppActivity extends GameControllerActivity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {        
-        super.onCreate(savedInstanceState);                 
-        //Manually specify an adapter.
-        this.connectController(DRIVERTYPE_NIBIRU);
-    }   
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {		
+		super.onCreate(savedInstanceState);
+		
+		//The standard controller,without doing anything special. e.g: Amazon Fire TV
+		
+		//Manually specify an adapter.
+		this.connectController(DRIVERTYPE_NIBIRU);
+		//this.connectController(DRIVERTYPE_MOGA);
+		//this.connectController(DRIVERTYPE_OUYA);
+	}
 }
 
 ```
+
+###4. Compile and run

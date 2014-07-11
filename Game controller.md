@@ -186,7 +186,7 @@ To connect the game controller, read the instructions of your game controller pl
 
 If you are a new comer and you don't know how to create a Cocos2d-x project on iOS, read this article first. [How_to_Build_an_Android_Project_with_Eclipse](http://www.cocos2d-x.org/wiki/How_to_Build_an_Android_Project_with_Eclipse). But the game controller feature is an independent lib named `libControllerManualAdapter` which means you need to add this lib to your eclipse android project. The path is `Cocos2d-x path/platform/android/ControllerManualAdapter `and it can be compiled only on `Android sdk 4.1.2 above` . 
 
-![eclipse project](./Resources/eclipse project.png) 
+![eclipse project](./Resources/Eclipse project.png)
 
 ###3. Modify AppActivity.java
 

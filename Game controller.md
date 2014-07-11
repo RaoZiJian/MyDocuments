@@ -7,18 +7,18 @@
 We have added game controller feature since Cocos2d-x v3.2 rc0. This tutorial  will teach you how to support game controllers in iOS and Android.
 
 ## Game-Controller-Test ##
-The sample test for game controller is in the path: `Cocos2d-x path/build/cocos2d_tests.xcodeproj`. Select the project `game-controller-test` and the target is the iOS Device which have connected your game controller.
+The sample test for game controller is in the path: `Cocos2d-x path/build/cocos2d_tests.xcodeproj`. Select the project `game-controller-test` and the target is the `iOS Device` which have connected your game controller.
 
-![game-controller-text iOS](http://discuss.cocos2d-x.org/uploads/default/6646/949394e25469580c.jpeg)
+![game-controller-test iOS](http://discuss.cocos2d-x.org/uploads/default/6646/949394e25469580c.jpeg)
 
-Then compile and run the `game-controller-test`. You will see the appearance on your screen like the picture below. If you press any keys on your controller device. The corresponding keys on your screen will highlight.
+Then compile and run the `game-controller-test`. You will see the appearance on your screen like the picture below. If you press the keys on your controller device. The corresponding keys on your screen will highlight.
 
 ![Mou icon](http://discuss.cocos2d-x.org/uploads/default/6647/e94806f5561af0c3.png)
 
 
 ##Game controller event##
 
-Game controller is a event listener called `EventListenerController` in Cocos2d-x. There are 6 events of controller listener: `onConnected` ,`onDisconnected`, `onKeyDown`, `onKeyUp`, `onAxisEvent`, `onKeyRepeat`. 'onAxisEvent' is the event when the analog stick changed. The `KeyCode` refers to the key type in your interaction. The list and picture shows the `KeyCode` and its corresponding key of the controller. 
+Game controller is a event listener called `EventListenerController` in Cocos2d-x. There are 6 events of controller listener: `onConnected`, `onDisconnected`, `onKeyDown`, `onKeyUp`, `onAxisEvent`, `onKeyRepeat`. 'onAxisEvent' is the event when the analog stick changed. The `KeyCode` refers to the key type in your interaction. The list and picture shows the `KeyCode` and its corresponding key of the controller. 
 
 ```cpp
 
@@ -61,7 +61,7 @@ Game controller is a event listener called `EventListenerController` in Cocos2d-
 ```
 ![Key Code](http://discuss.cocos2d-x.org/uploads/default/_optimized/3a6/62a/dec9ce3e5b_690x388.png)
 
-There are 3 kinds statuses of a key. If `isAnalog` is true, the `value` might be a float from -1 to 1. If `isAnalog` is false, the `value` would be a centain number like -1 or 1. If depends on your key and the game controller. For example, if your key is `JOYSTICK_LEFT_X`, then its `isAnalog` would be true and the `value` is a float from -1 to 1 which represent your left joystick's X axis value.
+There are 3 kinds statuses of a key. If `isAnalog` is true, the `value` might be a float from -1 to 1. If `isAnalog` is false, the `value` would be a centain number like -1 or 1. If depends on your key and the game controller. For example, if your key is `JOYSTICK_LEFT_X`, then its `isAnalog` would be true and the `value` is a float from -1 to 1 which represent your left joystick's X-axis value.
 
 ```cpp
    typedef struct _keyStatus
@@ -117,7 +117,7 @@ The codes below shows how to use these events in your iOS project.
 	    CCLOG("KeyUp:%d", keyCode);
 	}
 	
-	//The axis includes X axis and Y axis and its range is from -1 to 1. X axis is start from left to right and Y axis is bottom to top.
+	//The axis includes X-axis and Y-axis and its range is from -1 to 1. X-axis is start from left to right and Y-axis is bottom to top.
 	void HelloWorld::onAxisEvent(cocos2d::Controller* controller, int keyCode, cocos2d::Event* event)
 	{
 	    const auto& keyStatus = controller->getKeyStatus(keyCode);

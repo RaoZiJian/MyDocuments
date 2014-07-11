@@ -162,18 +162,46 @@ To support game controller in iOS devices, you need `iOS 7.0` above. And you nee
 
 ![PowerShell](http://store.storeimages.cdn-apple.com/7792/as-images.apple.com/is/image/AppleInc/aos/published/images/H/E0/HE018/HE018?wid=800)
 
+
 ###2. Add GameController.Framework 
 
-You need to add GameController.Framework (iOS 7.0 above). See the picture below.
+If you are a new comer and you don't know how to create a Cocos2d-x project on iOS, read this article first. [How_to_Start_A_New_Cocos2D-X_Game](http://www.cocos2d-x.org/wiki/How_to_Start_A_New_Cocos2D-X_Game). Next you need to add GameController.Framework (iOS 7.0 above). See the picture below.
 
-![Mou icon](http://discuss.cocos2d-x.org/uploads/default/6649/1edfdce7d63272f4.jpeg)
+![iOS project](http://discuss.cocos2d-x.org/uploads/default/6649/1edfdce7d63272f4.jpeg)
 
 ###3. Write your controller event 
 
-[a](#user-content-how-to-support-game-controller-in-cocos2d-x)
+Read the [Game-controller-event](#user-content-game-controller-event) and write your own code in your program. Then run it on the real devices.
 
 ## How to integrate game controller to Android devices
 
 ###1. Connect device
 
+To connect the game controller, read the instructions of your game controller please. Here we choose Nibiru Android GamePad as the sample. We download and install the apk for the controller's driver. Then open the app to link the game pad. 
 
+![iOS project](./Resources/device-2014-07-11-162543.png)
+
+
+###2. Add libControllerManualAdapter
+
+If you are a new comer and you don't know how to create a Cocos2d-x project on iOS, read this article first. [How_to_Build_an_Android_Project_with_Eclipse](http://www.cocos2d-x.org/wiki/How_to_Build_an_Android_Project_with_Eclipse). But the game controller feature is an independent lib named `libControllerManualAdapter` which means you need to add this lib to your eclipse android project. The path is `Cocos2d-x path/platform/android/ControllerManualAdapter `and it can be compiled only on `Android sdk 4.1.2 above` . 
+
+![eclipse project](./Resources/eclipse project.png) 
+
+###3. Modify AppActivity.java
+
+```java
+
+import org.cocos2dx.lib.GameControllerActivity;
+import android.os.Bundle;
+
+public class AppActivity extends GameControllerActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {        
+        super.onCreate(savedInstanceState);                 
+        //Manually specify an adapter.
+        this.connectController(DRIVERTYPE_NIBIRU);
+    }   
+}
+
+```

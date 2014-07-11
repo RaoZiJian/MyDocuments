@@ -20,7 +20,7 @@ Then compile and run the `game-controller-test`. You will see the appearance on 
 
 Game controller is a event listener called `EventListenerController` in Cocos2d-x. There are 6 events of controller listener: `onConnected` ,`onDisconnected`, `onKeyDown`, `onKeyUp`, `onAxisEvent`, `onKeyRepeat`. 'onAxisEvent' is the event when the analog stick changed. The `KeyCode` refers to the key type in your interaction. The list and picture shows the `KeyCode` and its corresponding key of the controller. 
 
-```
+```cpp
 
     enum Key
     {
@@ -63,7 +63,7 @@ Game controller is a event listener called `EventListenerController` in Cocos2d-
 
 There are 3 kinds statuses of a key. If `isAnalog` is true, the `value` might be a float from -1 to 1. If `isAnalog` is false, the `value` would be a centain number like -1 or 1. If depends on your key and the game controller. For example, if your key is `JOYSTICK_LEFT_X`, then its `isAnalog` would be true and the `value` is a float from -1 to 1 which represent your left joystick's X axis value.
 
-```
+```cpp
    typedef struct _keyStatus
     {
         bool isPressed;
@@ -74,7 +74,7 @@ There are 3 kinds statuses of a key. If `isAnalog` is true, the `value` might be
 
 The codes below shows how to use these events in your iOS project.
 
-```
+```cpp
 
 	void HelloWorld::registerControllerListener()
 	{
@@ -170,5 +170,5 @@ You need to add GameController.Framework (iOS 7.0 above). See the picture below.
 
 ###3. Write your controller event 
 
-[Game controller event][1]sfsfs
+[Game controller event][1]
 

@@ -1,7 +1,7 @@
 #3D Features in Cocos2d-x v3.2
 ---
 ##Sprite3D 
-`Sprite3D` is similar to `Sprite` but it is refer to the 3D sprite. You can init a `Sprite3D` by `create` functions.
+`Sprite3D` is similar to `Sprite` only 3D. You can init a `Sprite3D` by using the built-in `create` functions.
 
 Example:
 
@@ -18,13 +18,13 @@ Example:
     
 ```
 
-As a subclass of `Node`, sprite3Ds can be transformed manually or using [Actions](http://www.cocos2d-x.org/wiki/Actions), which is as same as the `Sprite`.
+As a subclass of `Node`, Sprite3D can be transformed manually or using [Actions](http://www.cocos2d-x.org/wiki/Actions), just like `Sprite`.
 
 ![image](./Resources/Sprite3DActions.png)
 
 ##Sprite3D supported format
 
-The `Sprite3D` now supported 3 kinds of formats below
+The `Sprite3D` now supports 3 kinds of formats below
 
 - obj : `obj` is a format exported by 3ds Max or Maya. `Sprite3D` can be created by `obj` format resources immediately. But `obj` foramt is not support the Animation 
 
@@ -59,7 +59,7 @@ Options:
 
 ##Animation 3D
 
-To run an animation of `Sprite3D`, we have `Animation3D\Animate3D` classes. `Animation3D` can be created from the 'c3b' or 'c3t' format files. And then create the `Animate3D` through the Animation3D object. You can use `runAction()` to run the `Animate3D` since it is a subclass of the `ActionInterval`. This is alike the relation between `Animation\Animate`. We have a sample in the `testcpp` titled `Testing Animate3D`.
+To run an animation of `Sprite3D`, we have `Animation3D\Animate3D` classes. `Animation3D` can be created from the 'c3b' or 'c3t' format files. And then create the `Animate3D` through the Animation3D object. You can use `runAction()` to run the `Animate3D` since it is a subclass of the `ActionInterval`. This is like the relation between `Animation\Animate`. We have a sample in the `testcpp` named `Testing Animate3D`.
 
 
 ```cpp
@@ -104,7 +104,7 @@ To run an animation of `Sprite3D`, we have `Animation3D\Animate3D` classes. `Ani
 
 ##Sprite3D Effects
 
-Talking bout the effects of 'Sprite3D', we don't support any API of it in v3.2 because it would change many core code of the engine which may lead to so much unstable. But there is a sample implements the `3D outline effect` in [EarthWarrior3D](https://github.com/chukong/EarthWarrior3D) by `Sprite3D` to navigate how to create your own effects. Developers can find the code from `testCpp`.
+Effects for 'Sprite3D', are not yet supported as of v3.2. This is because it would change a great deal of core code of the engine. But there is a sample implements the `3D outline effect` in [EarthWarrior3D](https://github.com/chukong/EarthWarrior3D) by `Sprite3D` to navigate how to create your own effects. Developers can find the code from `testCpp`.
 
 ```cpp
 

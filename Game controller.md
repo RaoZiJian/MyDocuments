@@ -4,21 +4,21 @@
 
 ## Overview ##
 
-We have added game controller feature since Cocos2d-x v3.2 rc0. This tutorial  will teach you how to support game controllers in iOS and Android.
+This tutorial will introduce you to supporting ios and Android game controllers in Cocos2d-x v3.2 rc0.
 
 ## Game-Controller-Test ##
-The sample test for game controller is in the path: `Cocos2d-x path/build/cocos2d_tests.xcodeproj`. Select the project `game-controller-test` and the target is the `iOS Device` which have connected your game controller.
+The sample test for game controllers is in the path: `Cocos2d-x path/build/cocos2d_tests.xcodeproj`. Select the project `game-controller-test` and the target to the iOS Device which have connected your game controller.
 
 ![game-controller-test iOS](http://discuss.cocos2d-x.org/uploads/default/6646/949394e25469580c.jpeg)
 
-Then compile and run the `game-controller-test`. You will see the appearance on your screen like the picture below. If you press the keys on your controller device. The corresponding keys on your screen will highlight.
+Then compile and run the `game-controller-test`. Your screen should look like the picture below. If you press any keys on your controller device. The corresponding keys on your screen will highlight.
 
 ![Mou icon](http://discuss.cocos2d-x.org/uploads/default/6647/e94806f5561af0c3.png)
 
 
 ##Game controller event##
 
-Game controller is a event listener called `EventListenerController` in Cocos2d-x. There are 6 events of controller listener: `onConnected`, `onDisconnected`, `onKeyDown`, `onKeyUp`, `onAxisEvent`, `onKeyRepeat`. 'onAxisEvent' is the event when the analog stick changed. The `KeyCode` refers to the key type in your interaction. The list and picture shows the `KeyCode` and its corresponding key of the controller. 
+Game controller is a event listener called `EventListenerController` in Cocos2d-x. There are 6 events of controller listener: `onConnected` ,`onDisconnected`, `onKeyDown`, `onKeyUp`, `onAxisEvent`, `onKeyRepeat`. `onAxisEvent` is the event when the analog stick changed. The `KeyCode` refers to the key type in your interaction. The list and picture shows the `KeyCode` and its corresponding key of the controller. 
 
 ```cpp
 
@@ -61,7 +61,7 @@ Game controller is a event listener called `EventListenerController` in Cocos2d-
 ```
 ![Key Code](http://discuss.cocos2d-x.org/uploads/default/_optimized/3a6/62a/dec9ce3e5b_690x388.png)
 
-There are 3 kinds statuses of a key. If `isAnalog` is true, the `value` might be a float from -1 to 1. If `isAnalog` is false, the `value` would be a centain number like -1 or 1. If depends on your key and the game controller. For example, if your key is `JOYSTICK_LEFT_X`, then its `isAnalog` would be true and the `value` is a float from -1 to 1 which represent your left joystick's X-axis value.
+There are 3 kinds statuses of a key. If `isAnalog` is true, the `value` might be a float from -1 to 1. If `isAnalog` is false, the `value` would be a centain number like 0 or 1. If depends on your key and the game controller. For example, if your key is `JOYSTICK_LEFT_X`, then its `isAnalog` would be true and the `value` is a float from -1 to 1 which represent your left joystick's X-axis value.
 
 ```cpp
    typedef struct _keyStatus
@@ -72,7 +72,7 @@ There are 3 kinds statuses of a key. If `isAnalog` is true, the `value` might be
     }KeyStatus;
 ```
 
-The codes below shows how to use these events in your iOS project.
+The codes below shows how to use these events in your project.
 
 ```cpp
 
@@ -158,7 +158,7 @@ The codes below shows how to use these events in your iOS project.
 
 ###1. Connect device
 
-To support game controller in iOS devices, you need `iOS 7.0` above. And you need to connect your controller to you iOS device. Different devices may have dissimilar methods to link. (Please read the instructions of your game controller). In this sample, we used PowerShell, which supported iPhone 5/5C/5S and iPod touch 5th generation. It is easy to connect PowerShell, just insert your devices in it.
+To support game controller in iOS devices, you need `iOS 7.0` above.  You also need to connect your controller to your iOS device. Different devices may have similar methods to link. (Please read the instructions of your game controller). In this sample, we used PowerShell, which supports iPhone 5/5C/5S and iPod touch 5th generation. It is easy to connect PowerShell, just insert your devices in it.
 
 ![PowerShell](http://store.storeimages.cdn-apple.com/7792/as-images.apple.com/is/image/AppleInc/aos/published/images/H/E0/HE018/HE018?wid=800)
 
@@ -184,7 +184,7 @@ To connect the game controller, read the instructions of your game controller pl
 
 ###2. Add libControllerManualAdapter
 
-If you are a new comer and you don't know how to create a Cocos2d-x project on iOS, read this article first:[How_to_Build_an_Android_Project_with_Eclipse](http://www.cocos2d-x.org/wiki/How_to_Build_an_Android_Project_with_Eclipse). But the game controller feature is an independent lib named `libControllerManualAdapter` which means you need to add this lib to your eclipse android project. The path is `Cocos2d-x path/platform/android/ControllerManualAdapter `and it can be compiled only on `Android sdk 4.1.2 above` . 
+If you are a new comer and you don't know how to create a Cocos2d-x project on iOS, read this article first:[How_to_Build_an_Android_Project_with_Eclipse](http://www.cocos2d-x.org/wiki/How_to_Build_an_Android_Project_with_Eclipse). But the game controller feature is an independent lib named `libControllerManualAdapter`. You need to add this lib to your eclipse android project. The path is `Cocos2d-x path/platform/android/ControllerManualAdapter `and it can be compiled only on `Android sdk 4.1.2 above` . 
 
 ![eclipse project](./Resources/Eclipse project.png)
 
